@@ -1,3 +1,11 @@
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
-sudo yum -y install terraform
+provider "aws" {
+    region = "ap-south-1"
+  
+}
+
+resource "aws_instance" "name" {
+    ami = "ami-0d682f26195e9ec0f"
+    instance_type = "t2.nano"
+    key_name = "mumbai"
+  
+}
